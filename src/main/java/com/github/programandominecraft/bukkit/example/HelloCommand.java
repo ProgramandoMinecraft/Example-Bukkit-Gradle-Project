@@ -22,6 +22,6 @@ public class HelloCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         List<String> messages = plugin.getConfig().getStringList("hello-messages");
         sender.sendMessage(messages.get(random.nextInt(messages.size())));
-        return false;
+        return true;
     }
 }
