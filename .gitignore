@@ -1,0 +1,12 @@
+# Gradle builds and downloads
+.gradle
+/build
+
+# IntelliJ IDEA project files
+.idea
+*.iws
+*.ipr
+/out
+
+# Eclipse project file
+.project
