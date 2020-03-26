@@ -15,9 +15,11 @@ repositories {
 }
 
 bukkit {
+    // TODO Change to your own plugin class
     main = 'com.github.programandominecraft.bukkit.example.ExamplePlugin'
-    apiVersion = '1.15'
+    apiVersion = '1.15' // TODO If you change the Bukkit version, don't forget to change the API Version
 
+    // Command configuration example, it adds a /hello command which requires the example.hello permission
     commands {
         hello {
             description = 'The hello command requires op!'
@@ -25,10 +27,14 @@ bukkit {
         }
     }
 
+    // Example permissions
     permissions {
+        // This special permission should have all relevant children permissions declared bellow, it allows
+        // server owners to give example.* permission. Bukkit does not create wildcard permissions automatically.
         'example.*' {
             children = ['example.hello']
         }
+        // This example permission is given to OP players by default.
         'example.hello' {
             description = 'Allows to execute the hello command'
             setDefault('OP') // 'TRUE', 'FALSE', 'OP' or 'NOT_OP'
